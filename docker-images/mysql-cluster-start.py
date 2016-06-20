@@ -1,7 +1,9 @@
+#coding=utf-8
 import subprocess
 import time
 import writeConfig
 import sys
+import os
 
 ###### create etcd cluster
 subprocess.Popen(["etcd" ,"-proxy", "on","-listen-client-urls", "http://127.0.0.1:2379","-initial-cluster", "etcd0=http://etcd0:2380,etcd1=http://etcd1:2380,etcd2=http://etcd2:2380"])
@@ -13,11 +15,9 @@ print("end");
 mysql_configs = subprocess.check_output("etcdctl get mysql-configs",shell=True);
 mysql_configs = mysql_configs.strip('\n');
 keyList = mysql_configs.split(',');
-print(mysql_configs);
-num = len(keyList);
-print(num)
 for key in keyList:
     #set data into my.cnf
+    #here key should be changed -> clusterId + key
     value = subprocess.check_output(["etcdctl","get",key]);
     key_value = "the key is %s,value is %s" %(key,value)
 
@@ -26,8 +26,26 @@ for key in keyList:
     #writeConfig.watchKeyValueChangeHandle(key)
 
 ###### start mysql
+#1) get the state from etcd to check if the cluster is create first time
+clusterId = os.environ.get("WSREP_CLUSTER_ID");
+key = clusterId + "-first-start";
+clusterState = subprocess.check_output(["etcdctl","get",key]);
+clusterState = clusterState.strip('\n');
+nodeId = os.environ.get("WSREP_NODE_ID");
+
+#if nodeId == "1" and clusterState == "true":
+#    mysqlProcess = subprocess.Popen(sys.argv[1],shell=True);
+#    subprocess.check_output(["etcdctl","set",key,"false"]);
+#else:
+#    mysqlProcess = subprocess.Popen("exec mysqld --init-file=/tmp/second-start.sql",shell=True);
+
+
+###### here when pod was recreated,the mysql will be delete
 mysqlProcess = subprocess.Popen(sys.argv[1],shell=True);
+writeConfig.writeConfig2File("start mysql process",sys.argv[1],"/a.txt");
 print("start mysql ");
+
+
 
 ###### watch the key which when changed should restart mysql service
 
