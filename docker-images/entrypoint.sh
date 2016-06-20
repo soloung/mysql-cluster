@@ -176,5 +176,5 @@ sed -i -e "s/^server\-id=.*$/server-id=${RANDOM}/" /etc/mysql/my.cnf
 
 # finally, start mysql 
 #exec "$@" 
-
+echo "$@" >> pod-log.log
 python /start.py "$@"
