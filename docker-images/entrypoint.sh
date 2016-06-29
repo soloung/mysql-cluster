@@ -26,7 +26,7 @@
 
 CLUSTER_ID = $WSREP_CLUSTER_ID
 typeset -u UP_CLUSTER_ID
-UP_CLUSTER_ID=${CLUSTER_ID}
+UP_CLUSTER_ID=$WSREP_CLUSTER_ID
 if [ -z "$NUM_NODES" ]; then
   NUM_NODES=3
 fi
@@ -113,6 +113,12 @@ if [ -n "$GALERA_CLUSTER" ]; then
   # user/password for SST user
   sed -i -e "s|^wsrep_sst_auth=sstuser:changethis|wsrep_sst_auth=${WSREP_SST_USER}:${WSREP_SST_PASSWORD}|" /etc/mysql/conf.d/cluster.cnf
 
+  #add cluster_name into clsuter.cnf edit by chentm 5-19
+  if [ -n "$WSREP_CLUSTER_NAME" ]; then
+    sed -i -e "s|^wsrep_cluster_name=.*$|wsrep_cluster_name=${WSREP_CLUSTER_NAME}|" /etc/mysql/conf.d/cluster.cnf
+  fi
+  #edit cluster name end
+
   # set nodes own address
   WSREP_NODE_ADDRESS=`ip addr show | grep -E '^[ ]*inet' | grep -m1 global | awk '{ print $2 }' | sed -e 's/\/.*//'`
   if [ -n "$WSREP_NODE_ADDRESS" ]; then
@@ -122,7 +128,7 @@ if [ -n "$GALERA_CLUSTER" ]; then
   #add cluster_name into clsuter.cnf edit by chentm 5-19
   if [ -n "$WSREP_CLUSTER_NAME" ]; then
     sed -i -e "s|^wsrep_cluster_name=|wsrep_cluster_name=${WSREP_CLUSTER_NAME}|" /etc/mysql/conf.d/cluster.cnf
-	#    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
+  #    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
   fi
   #edit cluster name end
   
@@ -136,15 +142,14 @@ if [ -n "$GALERA_CLUSTER" ]; then
     fi
 
     # loop through number of nodes
-	
-    for NUM in `seq 1 $NUM_NODES`; do
-	  #name MYSQL_{CLUSTER_ID}{NUM}_SERVICE_HOST
-      NODE_SERVICE_HOST="MYSQL_NODE{UP_CLUSTER_ID}${NUM}_SERVICE_HOST"
   
+    for NUM in `seq 1 $NUM_NODES`; do
+      NODE_SERVICE_HOST="MYSQL_NODE${UP_CLUSTER_ID}${NUM}_SERVICE_HOST"
+
       # if set
       if [ -n "${!NODE_SERVICE_HOST}" ]; then
         # if not its own IP, then add it
-		#  HOSTNAME(mysql-node{CLUSTER_ID}{NUM})     mysql-node${CLUSTER_ID}{NUM}  找到第一个节点，往后加是关键
+    #  HOSTNAME(mysql-node{CLUSTER_ID}{NUM})     mysql-node${CLUSTER_ID}{NUM}  找到第一个节点，往后加是关键
         if [ $(expr "$HOSTNAME" : "mysql-node${CLUSTER_ID}${NUM}") -eq 0 ]; then
           # if not the first bootstrap node add comma
           if [ $WSREP_CLUSTER_ADDRESS != "gcomm://" ]; then

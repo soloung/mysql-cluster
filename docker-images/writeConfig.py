@@ -2,13 +2,15 @@
 import os
 import subprocess
 import sys
+import clusterLog
+
+
 def fileHandle(str):
     return
-
 #watch the key-value with restart mysql
-def watchKeyValueChangeHandle(key):
+def watchKeyValueChangeHandle(clusterId,key):
     print "watch key value change handle"
-    process = subprocess.Popen(["etcdctl","exec-watch",key,"--","python","restart-mysql.py",key]);
+    process = subprocess.Popen(["etcdctl","exec-watch",clusterId + key,"--","python","restart-mysql.py",key]);
     return
 
 #write the config into my.cnf
@@ -36,5 +38,34 @@ def writeConfig2File(key,value,fileName):
 def writeConfigs2File(keyValueMap):
     return;
 
+def getConfigFromEtcd(key):
+    getFlag = False;
+    getTimes = 0;
+    value="";
+    while getFlag == False and getTimes<20:
+        try:
+            getTimes = getTimes + 1;
+            value = subprocess.check_output("etcdctl get "+key,shell=True);
+        except Exception, e:
+            clusterLog.logger.info("getConfig %s frm etcd error ",key)
+        else:
+            getFlag = True;
+        finally:
+            pass
+    value = value.strip('\n');
+    return value;
 
-#writeConfig2File("key1","value1","a.txt");
+def setConfig2Etcd(key,value):
+    setFlag = False
+    setTimes = 0
+    while setFlag == False and setTimes < 20:
+        try:
+            setTimes = setTimes + 1;
+            subprocess.check_output(["etcdctl","set",key,value]);
+        except Exception, e:
+            clusterLog.logger.info("setConfig  %s error when set key",key)
+        else:
+            setFlag = True;
+        finally:
+            pass
+    return;

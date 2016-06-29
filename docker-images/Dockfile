@@ -72,7 +72,13 @@ COPY cluster.cnf /etc/mysql/conf.d/cluster.cnf
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
+COPY init-cluster-config.py /init-cluster-config.py
+
 COPY mysql-cluster-start.py /start.py
+COPY clusterLog.py /clusterLog.py
+COPY skydns.py /skydns.py
+COPY logging.conf /logging.conf
+
 
 COPY second_start.sql /tmp/second_start.sql
 

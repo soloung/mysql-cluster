@@ -1,0 +1,93 @@
+2016-06-28 17:09:47,716 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:09:47,763 - root- skydns.py[line:14] INFO can't set the value to SkyDNS
+2016-06-28 17:09:47,779 - root- skydns.py[line:31] ERROR can't get the value : zz
+2016-06-28 17:10:07,869 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:10:07,918 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:10:07,936 - root- skydns.py[line:31] ERROR can't get the value : zz
+2016-06-28 17:12:24,628 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:12:24,681 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:13:19,469 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:13:19,519 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:14:56,107 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:14:56,153 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:15:17,778 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:15:17,819 - root- skydns.py[line:12] INFO set skydns ok
+2016-06-28 17:16:09,598 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:16:37,871 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:16:37,894 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:21:25,555 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:21:25,576 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:22:00,214 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:22:00,240 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:22:21,240 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:22:21,371 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:22:46,999 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:22:47,019 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:23:08,505 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:23:08,535 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:23:20,848 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:23:20,868 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:24:43,016 - root- test.py[line:11] INFO {'ip': '111.111.111.111', 'port': 99}
+2016-06-28 17:24:51,381 - root- test.py[line:11] INFO {'ip': '111.111.111.111', 'port': 99}
+2016-06-28 17:31:21,259 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:31:21,283 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:31:49,276 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:31:49,296 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:32:05,678 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:32:05,700 - root- skydns.py[line:12] INFO set skydns ok
+2016-06-28 17:36:29,151 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:36:29,176 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:37:32,375 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:37:32,405 - root- skydns.py[line:14] ERROR can't set the value to SkyDNS
+2016-06-28 17:38:45,118 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 17:39:00,736 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:42:03,779 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:42:03,806 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:43:05,938 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:43:05,973 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:43:28,507 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:43:28,542 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:43:44,105 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:43:44,131 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:48:19,575 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:48:19,635 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:48:54,907 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:48:54,980 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:50:26,193 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:51:59,611 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:51:59,676 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:53:30,335 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:53:30,401 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 17:55:23,565 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 17:55:23,631 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 19:08:26,596 - root- test.py[line:9] INFO s s s
+2016-06-28 19:11:11,892 - root- test.py[line:9] INFO s s s
+2016-06-28 19:11:16,617 - root- test.py[line:9] INFO s s s
+2016-06-28 19:11:30,826 - root- test.py[line:9] INFO sxsxs
+2016-06-28 19:11:38,999 - root- test.py[line:9] INFO sss
+2016-06-28 19:12:28,299 - root- skydns.py[line:70] INFO -------------------------------------------------
+2016-06-28 19:12:28,323 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-28 19:12:47,210 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 19:12:47,256 - root- skydns.py[line:12] INFO set skydns ok
+2016-06-28 20:34:17,601 - root- skydns.py[line:69] INFO -------------------------------------------------
+2016-06-28 20:34:17,614 - root- skydns.py[line:47] ERROR can't find the pod:mysql-node2tll7by61-dkcm0 in namespace default
+2016-06-28 20:34:17,628 - root- skydns.py[line:63] ERROR can't find the service:mysql-clusterxx in namespace default
+2016-06-28 20:34:17,635 - root- skydns.py[line:12] INFO set skydns ok
+2016-06-28 21:01:50,668 - root- skydns.py[line:75] INFO -------------------------------------------------
+2016-06-28 21:01:50,681 - root- skydns.py[line:49] ERROR can't find the pod:mysql-node2tll7by61-dkcm0 in namespace default
+2016-06-28 21:01:50,697 - root- skydns.py[line:68] ERROR can't find the service:mysql-clusterxx in namespace default
+2016-06-28 21:01:50,700 - root- skydns.py[line:8] INFO set the value {"host":"192.168.48.99","port":31002} to skydns
+2016-06-28 21:01:50,710 - root- skydns.py[line:13] INFO set skydns ok
+2016-06-28 21:02:05,668 - root- test.py[line:9] INFO sss
+2016-06-28 21:02:05,670 - root- test.py[line:13] INFO sssssssssssssssssss
+2016-06-29 09:51:58,384 - root- skydns.py[line:76] INFO -------------------------------------------------
+2016-06-29 09:51:58,414 - root- skydns.py[line:50] ERROR can't find the pod:mysql-node2tll7by61-dkcm0 in namespace default
+2016-06-29 09:51:58,436 - root- skydns.py[line:69] ERROR can't find the service:mysql-clusterxx in namespace default
+2016-06-29 09:51:58,438 - root- skydns.py[line:8] INFO set the value {"host": "192.168.48.99", "port": 31002} to skydns
+2016-06-29 09:51:58,448 - root- skydns.py[line:15] ERROR can't set the value to SkyDNS
+2016-06-29 09:51:58,448 - root- skydns.py[line:16] ERROR Bad Request
+2016-06-29 09:52:26,483 - root- skydns.py[line:76] INFO -------------------------------------------------
+2016-06-29 09:52:26,497 - root- skydns.py[line:50] ERROR can't find the pod:mysql-node2tll7by61-dkcm0 in namespace default
+2016-06-29 09:52:26,513 - root- skydns.py[line:69] ERROR can't find the service:mysql-clusterxx in namespace default
+2016-06-29 09:52:26,516 - root- skydns.py[line:8] INFO set the value {"host":"192.168.48.99","port":31002} to skydns
+2016-06-29 09:52:26,525 - root- skydns.py[line:13] INFO set skydns ok
