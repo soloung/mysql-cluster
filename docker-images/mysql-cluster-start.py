@@ -56,7 +56,7 @@ def setHostIp2SkyDns():
     hostname = os.environ.get("HOSTNAME")
     clusterId = os.environ.get("WSREP_CLUSTER_ID");
     hostip = skydns.getPodHostIP("192.168.48.103",8080,"default",hostname)
-    serviceName = "mysql-cluster" + clusterId
+    serviceName = clusterId
     hostport = skydns.getServicePort("192.168.48.103",8080,"default",serviceName)
     nodeId = os.environ.get("WSREP_NODE_ID")
     

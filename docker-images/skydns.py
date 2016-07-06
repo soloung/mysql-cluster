@@ -7,20 +7,20 @@ def putValue2SkyDNS(skyDNSIp,skyDNSPort,clusterId,nodeId,value):
     # print "input value : " + value 
     logger.info(" will set the value %s to skydns clusterId is %s,nodeId is %s",value,clusterId,nodeId)
     conn = httplib.HTTPConnection(skyDNSIp,skyDNSPort)
-    conn.request("PUT","/v2/keys/skydns/local/cluster/mysql-"+clusterId + "/" + nodeId+ "?" + "value=" + value ,value)
+    conn.request("PUT","/v2/keys/skydns/local/cluster/"+clusterId + "/" + nodeId+ "?" + "value=" + value ,value)
     res = conn.getresponse()
     conn.close()
     if res.status == 200 :
         logger.info("set skydns ok")
     else:
         logger.error("can't set the value :%s to SkyDNS",value)
-        logger.error("skyDns ip %s:%d%s",skyDNSIp,skyDNSPort,"/v2/keys/skydns/local/cluster/mysql-"+clusterId  + "/" + nodeId+ "?" + "value=" + value)
+        logger.error("skyDns ip %s:%d%s",skyDNSIp,skyDNSPort,"/v2/keys/skydns/local/cluster/"+clusterId  + "/" + nodeId+ "?" + "value=" + value)
         logger.error("http res code:%d,res reason %s",res.status,res.reason)
     return 0
 
 def getValueFromSkyDNS(skyDNSIp,skyDNSPort,clusterId):
     conn = httplib.HTTPConnection(skyDNSIp,skyDNSPort)
-    conn.request("GET","/v2/keys/skydns/local/cluster/mysql-"+clusterId )
+    conn.request("GET","/v2/keys/skydns/local/cluster/"+clusterId )
 
     res = conn.getresponse()
     data = res.read()

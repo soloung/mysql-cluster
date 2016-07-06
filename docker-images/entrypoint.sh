@@ -144,13 +144,14 @@ if [ -n "$GALERA_CLUSTER" ]; then
     # loop through number of nodes
   
     for NUM in `seq 1 $NUM_NODES`; do
-      NODE_SERVICE_HOST="MYSQL_NODE${UP_CLUSTER_ID}${NUM}_SERVICE_HOST"
+      tempClusterId=${UP_CLUSTER_ID/-/_}
+      NODE_SERVICE_HOST="${tempClusterId}${NUM}_SERVICE_HOST"
 
       # if set
       if [ -n "${!NODE_SERVICE_HOST}" ]; then
         # if not its own IP, then add it
     #  HOSTNAME(mysql-node{CLUSTER_ID}{NUM})     mysql-node${CLUSTER_ID}{NUM}  找到第一个节点，往后加是关键
-        if [ $(expr "$HOSTNAME" : "mysql-node${CLUSTER_ID}${NUM}") -eq 0 ]; then
+        if [ $(expr "$HOSTNAME" : "${CLUSTER_ID}${NUM}") -eq 0 ]; then
           # if not the first bootstrap node add comma
           if [ $WSREP_CLUSTER_ADDRESS != "gcomm://" ]; then
             WSREP_CLUSTER_ADDRESS="${WSREP_CLUSTER_ADDRESS},"
@@ -161,7 +162,7 @@ if [ -n "$GALERA_CLUSTER" ]; then
             WSREP_CLUSTER_ADDRESS="${WSREP_CLUSTER_ADDRESS}"${!NODE_SERVICE_HOST}
           # otherwise use DNS
           else
-            WSREP_CLUSTER_ADDRESS="${WSREP_CLUSTER_ADDRESS}mysql-node${CLUSTER_ID}${NUM}"
+            WSREP_CLUSTER_ADDRESS="${WSREP_CLUSTER_ADDRESS}${CLUSTER_ID}${NUM}"
           fi
         fi
       fi
